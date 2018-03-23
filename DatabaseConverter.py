@@ -2,10 +2,10 @@ import sqlite3
 
 
 # Connect to appropriate Database
-database = "TESTING_NICK"
-db = sqlite3.connect("TESTING_NICK"+".sqlite")
+database = "ThursdayExp"
+db = sqlite3.connect(database+".sqlite")
 cursor = db.cursor()
-conn = sqlite3.connect("TESTING_NICK"+"_Converted.sqlite")
+conn = sqlite3.connect(database+"_Converted.sqlite")
 cursor2 = conn.cursor()
 
 # Get all tables and remove bad characters
@@ -21,6 +21,7 @@ for table in dbTables:
 print('The tables in the Database are:', tables)
 
 for table in tables:
+    print("\n\tCompiling table:", table)
     conn.execute("CREATE TABLE " + table + " (timestamp REAL, id TEXT, meas TEXT, PRIMARY KEY(timestamp, id, meas))")
     cursor.execute("SELECT timestamp, id, meas FROM " + table)
     rows = cursor.fetchall()
@@ -71,3 +72,5 @@ for table in tables:
 
 db.close()
 conn.close()
+
+print("Done!!!")
