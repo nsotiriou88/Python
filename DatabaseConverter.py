@@ -2,7 +2,7 @@ import sqlite3
 
 
 # Connect to appropriate Database
-database = "ThursdayExp"
+database = "FridayExp"
 db = sqlite3.connect(database+".sqlite")
 cursor = db.cursor()
 conn = sqlite3.connect(database+"_Converted.sqlite")
