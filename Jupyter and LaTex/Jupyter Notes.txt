@@ -1,0 +1,16 @@
+# Create a Virtual environment and Access it:
+	
+	python3 -m venv my_env_name --> create
+	
+	source my_env/bin/activate  --> acticate
+
+
+# SSH to server and also forward activity to port 8000 from server's local 8888:
+
+	ssh -L 8000:localhost:8888 sammy@your_server_ip  -->access it through local machine at browser 8000
+
+
+# Run Jupyter on server and check for token/password:
+
+	jupyter lab/notebook
+
