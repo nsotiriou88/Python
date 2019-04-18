@@ -5,18 +5,18 @@
 	source my_env/bin/activate  --> acticate
 
 
-# Terminal.1 - Run Jupyter on server and check for token/password:
+# Run Jupyter on server and check for token/password:
 
-	ssh username@your_server_ip
+	ssh -L 8000:localhost:8888 username@your_server_ip  --> (link: local port 8000 <-----> remote port 8888;
+	if the port is bind, it will open the next one available etc. 8889)
 
-	source virtual/bin/activate
+	source virtual/bin/activate    --> acticate
 
-	jupyter lab/notebook --no-browser --port=8000
+	jupyter lab/notebook --no-browser --port=8888 (or any other port, but need to forward it on ssh command)
 
 
-# Terminal.2 - SSH to server and also forward activity to port 8000 from server's local 8888:
+# Run Jupyter on server and check for token/password::
 
-	ssh -Y -N -L localhost:8000:localhost:8888 username@your_server_ip  -->access it through local machine at browser 8000
-
-	Open any browser and copy the http://localhost:8888/?token=********* to access
+	Open any browser and copy the http://localhost:8000/?token=********* -->access it through local machine at
+	browser 8000 or any other forwarded port from the SSH command.
 
