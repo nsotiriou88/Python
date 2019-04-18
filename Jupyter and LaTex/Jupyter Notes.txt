@@ -5,12 +5,18 @@
 	source my_env/bin/activate  --> acticate
 
 
-# SSH to server and also forward activity to port 8000 from server's local 8888:
+# Terminal.1 - Run Jupyter on server and check for token/password:
 
-	ssh -L 8000:localhost:8888 sammy@your_server_ip  -->access it through local machine at browser 8000
+	ssh username@your_server_ip
+
+	source virtual/bin/activate
+
+	jupyter lab/notebook --no-browser --port=8000
 
 
-# Run Jupyter on server and check for token/password:
+# Terminal.2 - SSH to server and also forward activity to port 8000 from server's local 8888:
 
-	jupyter lab/notebook
+	ssh -Y -N -L localhost:8000:localhost:8888 username@your_server_ip  -->access it through local machine at browser 8000
+
+	Open any browser and copy the http://localhost:8888/?token=********* to access
 
