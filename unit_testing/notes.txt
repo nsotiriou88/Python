@@ -1,0 +1,11 @@
+# Notes on Unit Testing
+
+## Use one of the naming convetions:
+
+	-test_script.py  (all test scripts will be matched together)
+	-script_test.py  (each individual script will be matched with its testing script)
+
+## Run unit test script in two ways:
+
+	-python -m unittest 		 (Python identifies the unit test scripts)
+	-python -m unittest test_script  (Specifying the testing script that we wrote)
